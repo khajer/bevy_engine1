@@ -1,0 +1,10 @@
+[tasks.build-web]
+command = "cargo"
+args = ["build", "--target", "wasm32-unknown-unknown"]
+
+[tasks.serve-web]
+command = "basic-http-server"
+args = ["."]
+
+[tasks.run-web]
+dependencies = ["build-web", "serve-web"]
